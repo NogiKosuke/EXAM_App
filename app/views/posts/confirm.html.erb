@@ -1,8 +1,22 @@
-<h2>以下の内容で送信します</h2>
-<%= form_with(model: @post, local: true ) do |form| %>
-  <%= form.hidden_field :content %>
-
-  <p>内容: <%= @post.content %></p>
-  <%= form.submit "登録する" %>
-  <%= form.submit "戻る", name: 'back' %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>diary</title>
+      <link rel="stylesheet" href="../../assets/stylesheets/normalize.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/position.css">
+  </head>
+  <body>
+    <h2>以下の内容で送信します</h2>
+    <div class = "form">
+    <%= form_with(model: @post, local: true ) do |form| %>
+      <%= form.hidden_field :content %>
+    
+      <p>内容: <%= @post.content %></p>
+      <%= form.submit "登録する" %>
+      <%= form.submit "戻る", name: 'back' %>
+    <% end %>
+    </div>
+  </body>
+</html>

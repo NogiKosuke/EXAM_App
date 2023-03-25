@@ -1,4 +1,19 @@
-<h2>詳細は以下の通りです</h2>
-
-<p>内容: <%= @post.content %></p>
-<p><%= link_to '戻る', posts_path %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>diary</title>
+      <link rel="stylesheet" href="../../assets/stylesheets/normalize.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/position.css">
+  </head>
+  <body>
+    <h2>詳細は以下の通りです</h2>
+    <div class = "form">
+    <p>内容: <%= @post.content %></p>
+    </div>
+    <div class = "buttons">
+    <p><%= link_to '戻る', posts_path %></p>
+    </div>
+  </body>
+</html>
