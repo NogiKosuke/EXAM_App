@@ -1,18 +1,38 @@
-<h2>日頃の出来事を登録しよう！<h2>
-<p><%= notice %></p>
-
-<table>
-  <tr>
-    <th>内容</th>
-  </tr>
-
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.content %></td>
-      <td><%= link_to "詳細", post_path(post.id) %></td>
-      <td><%= link_to "編集", edit_post_path(post.id) %></td>
-      <td><%= link_to "削除", post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
-    </tr>
-  <% end %>
-</table>
-<%= link_to "出来事を追加する", new_post_path %>
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>diary</title>
+      <link rel="stylesheet" href="../../assets/stylesheets/normalize.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/index.css">
+  </head>
+  <body>
+    <header class = "header">
+    </header>
+    <content class= "detail">
+      <h2 class = "title">日頃の出来事を登録しよう！<h2>
+      <p class ="notice"><%= notice %></p>
+      
+      <table class = "detail">
+        <tr>
+          <th>出来事</th>
+        </tr>
+      
+        <% @posts.each do |post| %>
+          <tr>
+            <td class = "event"><%= post.content %></td>
+            <td class = "button"><%= link_to "詳細", post_path(post.id) %></td>
+            <td class = "button"><%= link_to "編集", edit_post_path(post.id) %></td>
+            <td class = "button"><%= link_to "削除", post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
+          </tr>
+        <% end %>
+      </table>
+      <div class = "create_menu">
+        <%= link_to "出来事を追加する", new_post_path %>
+      </div>
+    </content>
+    <footer>
+    </footer>
+  </body>
+</html>
